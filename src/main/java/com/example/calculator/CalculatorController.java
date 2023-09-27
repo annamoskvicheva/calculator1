@@ -8,36 +8,45 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/calculator")
 public class CalculatorController {
-    private final CalculatorService calculatorService;
-    public CalculatorController(CalculatorService calculatorService){
-        this.calculatorService = calculatorService;
-    }
     @GetMapping
-    public String greeting(){
+    public String greeting() {
+        CalculatorService calculatorService = new CalculatorService();
         return calculatorService.greeting();
     }
+
     @GetMapping("/plus")
-    public String plus(@RequestParam int num1, @RequestParam int num2){
-         num1 = 5;//добавила
-         num2 = 5;
-        return calculatorService.plus(num1, num2);
+        public String plus (@RequestParam int num1, @RequestParam int num2){
+            num1 = 5;
+            num2 = 5;
+            CalculatorService calculatorService = new CalculatorService();
+            return calculatorService.plus(num1,num2);
     }
+
     @GetMapping("/minus")
-    public String minus(@RequestParam int num1, @RequestParam int num2){
+    public String minus(@RequestParam int num1, @RequestParam int num2) {
         num1 = 5;
         num2 = 5;
-        return calculatorService.minus(num1, num2);
+        CalculatorService calculatorService = new CalculatorService();
+        return calculatorService.minus(num1,num2);
     }
+
     @GetMapping("/multiply")
-    public String multiply(@RequestParam int num1, @RequestParam int num2){
+    public String multiply(@RequestParam int num1, @RequestParam int num2) {
         num1 = 5;
         num2 = 5;
+        CalculatorService calculatorService = new CalculatorService();
         return calculatorService.multiply(num1, num2);
     }
+
     @GetMapping("/divide")
-    public String divide(@RequestParam int num1, @RequestParam int num2){
+    public String divide(@RequestParam int num1, @RequestParam int num2) {
         num1 = 5;
         num2 = 5;
-        return calculatorService.divide(num1, num2);
+        CalculatorService calculatorService = new CalculatorService();
+        return calculatorService.divide(num1,num2);
     }
 }
+
+
+
+
