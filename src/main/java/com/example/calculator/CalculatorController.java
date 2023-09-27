@@ -16,7 +16,7 @@ public class CalculatorController {
 
     @GetMapping("/plus")
         public String plus (@RequestParam int num1, @RequestParam int num2){
-            num1 = 5;
+            num1 = 5; // добавлено
             num2 = 5;
             CalculatorService calculatorService = new CalculatorService();
             return calculatorService.plus(num1,num2);
