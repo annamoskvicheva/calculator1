@@ -8,21 +8,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/calculator")
 public class CalculatorController {
-    @GetMapping
+
     public String greeting() {
         CalculatorService calculatorService = new CalculatorService();
         return calculatorService.greeting();
     }
 
-    @GetMapping("/plus")
-        public String plus (@RequestParam int num1, @RequestParam int num2){
+        public  String plus (@RequestParam int num1, @RequestParam int num2){
             num1 = 5; // добавлено
             num2 = 5;
             CalculatorService calculatorService = new CalculatorService();
             return calculatorService.plus(num1,num2);
     }
 
-    @GetMapping("/minus")
+
     public String minus(@RequestParam int num1, @RequestParam int num2) {
         num1 = 5;
         num2 = 5;
@@ -30,7 +29,7 @@ public class CalculatorController {
         return calculatorService.minus(num1,num2);
     }
 
-    @GetMapping("/multiply")
+
     public String multiply(@RequestParam int num1, @RequestParam int num2) {
         num1 = 5;
         num2 = 5;
@@ -38,7 +37,7 @@ public class CalculatorController {
         return calculatorService.multiply(num1, num2);
     }
 
-    @GetMapping("/divide")
+
     public String divide(@RequestParam int num1, @RequestParam int num2) {
         num1 = 5;
         num2 = 5;
