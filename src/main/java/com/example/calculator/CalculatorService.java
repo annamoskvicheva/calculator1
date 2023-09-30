@@ -12,28 +12,30 @@ public class CalculatorService {
         return "Добро пожаловать в калькулятор!";
     }
 
-    public int plus(int num1, int num2) {
+    public String plus(int num1, int num2) {
+        int result = num1 + num2;
 
-        return num1 + num2;
+        return num1+"+"+ num2+"="+ result ;
     }
 
 
 
-    public int minus(int num1, int num2) {
+    public String minus(int num1, int num2) {
+        int result = num1 - num2;
 
-        return num1 - num2;
+        return num1+"-"+ num2+"="+ result;
     }
 
 
-    public int multiply(int num1, int num2) {
-
-        return num1 *num2;
+    public String multiply(int num1, int num2) {
+        int result =  num1 * num2;
+        return num1+"*"+ num2+"="+ result;
     }
 
 
-    public int divide(int num1, int num2) {
-
-        return  num1 / num2;
+    public String divide(int num1, int num2) {
+        int result= num1/num2;
+        return  num1+"/"+ num2+"="+ result;
     }
 }
 
