@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 
-//
+
 @RequestMapping("/calculator")
 
 
@@ -23,7 +23,7 @@ public class CalculatorController {
         return calculatorService.greeting();
     }
 
-
+//делала с помощью Q&A
     @GetMapping("/plus")
         public  String plus (@RequestParam int num1, @RequestParam int num2){
         CalculatorService calculatorService = new CalculatorService();
