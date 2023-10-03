@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class CalculatorController {
 
-    private CalculatorService calculatorService = new CalculatorService();
+   private CalculatorService calculatorService = new CalculatorService();
 
     @GetMapping
     public String greeting() {
@@ -23,31 +23,31 @@ public class CalculatorController {
         return calculatorService.greeting();
     }
 
-//делала с помощью Q&A
-    @GetMapping("/plus")
-        public  String plus (@RequestParam int num1, @RequestParam int num2){
-        CalculatorService calculatorService = new CalculatorService();
 
-            return calculatorService.plus(num1,num2);
+    @GetMapping("/plus")
+    public  String plus (@RequestParam int num1, @RequestParam int num2) {
+        int result = calculatorService.plus(num1, num2);
+        return (num1 + " + " + num2 + " = " + result);
     }
+
     @GetMapping("/minus")
     public String minus( @RequestParam int num1,  @RequestParam int num2) {
-        CalculatorService calculatorService = new CalculatorService();
+        int result = calculatorService.plus(num1, num2);
+        return (num1 + " -" + num2 + " = " + result);
 
-        return calculatorService.minus(num1,num2);
     }
 
     @GetMapping("/multiply")
     public String multiply(@RequestParam int num1, @RequestParam int num2) {
-        CalculatorService calculatorService = new CalculatorService();
-        return calculatorService.multiply(num1, num2);
+        int result = calculatorService.plus(num1, num2);
+        return (num1 + " *" + num2 + " = " + result);
     }
 
     @GetMapping("/divide")
 
     public String divide( @RequestParam int num1, @RequestParam int num2) {
-        CalculatorService calculatorService = new CalculatorService();
-        return calculatorService.divide(num1,num2);
+        int result = calculatorService.plus(num1, num2);
+        return (num1 + " / " + num2 + " = " + result);
     }
 }
 
